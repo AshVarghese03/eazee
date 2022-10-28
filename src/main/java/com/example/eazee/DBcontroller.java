@@ -29,11 +29,12 @@ public class DBcontroller {
     @FXML
     public void initialize() {
 
-        UserInformation holder = UserInformation.getInstance();
+        UserInformation uinfo = UserInformation.getInstance();
+        UserName.setText(uinfo.getUserName());
 
         BudgetStruct budgetStruct = getBudgetDetails();
         BalanceAmount.setText(budgetStruct.balanceAmt);
-        UserName.setText(holder.getUserName());
+
     }
     public static Connection databaseLink;
     private Stage stage;
