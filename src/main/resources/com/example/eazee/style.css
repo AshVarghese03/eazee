@@ -1,0 +1,32 @@
+.gradient-background{
+    -fx-background-color: #5588ff;
+}
+.line-color{
+    -fx-background-color: #b2d8d8;
+}
+.container{
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 15;
+    -fx-background-color: #b2d8d8;
+}
+.shadow{
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.2),10.0, 0.0 ,0.0,10.0);
+}
+.gradient-background1{
+    -fx-background-color: #66b2
+}
+.container1{
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 20;
+
+}
+.container2{
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 20;
+    -fx-background-color: #ffffff;
+}
+.container3{
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 20;
+    -fx-background-color: #24ee2e;
+}

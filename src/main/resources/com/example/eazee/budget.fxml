@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #34A8FA;" styleClass="line-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eazee.BudgetController">
+   <children>
+      <AnchorPane layoutX="115.0" layoutY="31.0" prefHeight="338.0" prefWidth="382.0" style="-fx-background-color: #C1E1C1;" styleClass="line-color" stylesheets="@style.css">
+         <children>
+            <ChoiceBox fx:id="DurationList" accessibleRole="CHECK_MENU_ITEM" layoutX="14.0" layoutY="220.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="203.0" />
+            <Text layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add amount" wrappingWidth="181.0">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Text>
+            <TextField fx:id="BalanceAmount" layoutX="14.0" layoutY="143.0" prefHeight="25.0" prefWidth="203.0" />
+            <Text layoutX="19.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration" wrappingWidth="203.20000000000005">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Text>
+            <Button layoutX="301.0" layoutY="24.0" mnemonicParsing="false" onAction="#SwitchToDashboard" prefHeight="22.0" prefWidth="66.0" styleClass="container2" stylesheets="@style.css" text="Back" />
+            <Button fx:id="SaveButton" layoutX="158.0" layoutY="287.0" mnemonicParsing="false" onAction="#SaveBudget" prefHeight="26.0" prefWidth="74.0" styleClass="container2" stylesheets="@style.css" text="Submit" />
+            <TextField fx:id="BudgetAmount" layoutX="14.0" layoutY="65.0" prefHeight="26.0" prefWidth="203.0" />
+            <Text layoutX="14.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance Amount" wrappingWidth="181.0">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Text>
+            <Label fx:id="informationBanner" layoutX="17.0" layoutY="288.0" prefHeight="26.0" prefWidth="142.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

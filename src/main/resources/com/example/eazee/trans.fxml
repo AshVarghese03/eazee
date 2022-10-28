@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #34A8FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eazee.TransactionController">
+   <children>
+      <AnchorPane layoutX="126.0" layoutY="31.0" prefHeight="338.0" prefWidth="347.0" styleClass="container" stylesheets="@style.css">
+         <children>
+            <ChoiceBox fx:id="TransType" accessibleRole="CHECK_MENU_ITEM" layoutX="19.0" layoutY="169.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="162.0" />
+            <Text layoutX="19.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" wrappingWidth="181.0">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="19.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" wrappingWidth="181.0">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="19.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category" wrappingWidth="181.0">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Amount" layoutX="19.0" layoutY="74.0" />
+            <Button layoutX="251.0" layoutY="293.0" mnemonicParsing="false" onAction="#SwitchToDashboard" prefHeight="31.0" prefWidth="86.0" styleClass="container2" stylesheets="@style.css" text="Back">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Button>
+            <ComboBox fx:id="listCategories" layoutX="25.0" layoutY="268.0" prefHeight="26.0" prefWidth="162.0" />
+            <Button fx:id="SaveButton" layoutX="251.0" layoutY="252.0" mnemonicParsing="false" onAction="#AddTransaction" prefHeight="31.0" prefWidth="86.0" styleClass="container2" stylesheets="@style.css" text="Save">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="informationBanner" layoutX="19.0" layoutY="309.0" prefHeight="18.0" prefWidth="240.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
