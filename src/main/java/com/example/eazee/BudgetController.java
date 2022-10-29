@@ -49,13 +49,16 @@ public class BudgetController implements Initializable {
     private Scene scene;
     private Parent root;
 
-
-
+    public boolean new_budget = true;
+    UserInformation uinfo = UserInformation.getInstance();
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         BudgetStruct budgetStruct = getBudgetDetails();
         BudgetAmount.setText(budgetStruct.budgetAmt);
         BalanceAmount.setText(budgetStruct.balanceAmt);
+        if(budgetStruct.budgetAmt.length()!=0){
+            new_budget =false;
+        }
         String[] categories = {"Monthly","Weekly"};
         for (String category : categories) {
             DurationList.getItems().add(category);
@@ -131,10 +134,18 @@ public class BudgetController implements Initializable {
             String selectedAmount = BudgetAmount.getText();
             String selectedBalance = BalanceAmount.getText();
 
+            String user_id = uinfo.getUserID();
             String selectedDuration = (String) DurationList.getValue();
+            String Sql;
+            if(new_budget){
+                String data_fields = "'"+selectedAmount+"' , '"+selectedBalance+"', '"+selectedDuration+"','"+user_id+"'";
+                Sql = "INSERT INTO budget (b_amount,b_balance,b_duration,username) VALUES ("+data_fields+")";
+            }
+            else{
+                Sql = "UPDATE budget SET b_amount ="+selectedAmount+", b_balance = "+selectedBalance+", b_duration = '"+selectedDuration+"' WHERE username='"+user_id+"';";
+                System.out.println(Sql);
+            }
 
-            String Sql = "UPDATE budget SET b_amount ="+selectedAmount+", b_balance = "+selectedBalance+", b_duration = '"+selectedDuration+"' WHERE b_id=1;";
-            System.out.println(Sql);
 
             DBcontroller db = new DBcontroller();
             Connection connectdb = db.connectDb();
@@ -151,13 +162,15 @@ public class BudgetController implements Initializable {
 
 
     public BudgetStruct getBudgetDetails(){
-        String Sql ="SELECT * FROM budget WHERE b_id=1";
+        String user_id = uinfo.getUserID();
+        String Sql ="SELECT * FROM budget WHERE username='"+user_id+"'";
         DBcontroller db = new DBcontroller();
         Connection connectdb = db.connectDb();
         String[] categories;
 
         BudgetStruct budgetData=new BudgetStruct();
         try{
+            budgetData.budgetAmt="";
             PreparedStatement prepare = connectdb.prepareStatement(Sql);
             ResultSet result = prepare.executeQuery();
             //Alert alert;

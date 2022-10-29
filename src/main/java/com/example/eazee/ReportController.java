@@ -25,6 +25,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ReportController {
+    UserInformation uinfo = UserInformation.getInstance();
 
     @FXML
     private Button backButton;
@@ -67,7 +68,7 @@ public class ReportController {
 
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
-        String Sql ="SELECT SUM(t_amt),t_category FROM pfm.transaction WHERE 1 GROUP BY t_category;";
+        String Sql ="SELECT SUM(t_amt),t_category FROM pfm.transaction WHERE username= '"+uinfo.getUserID()+"' GROUP BY t_category;";
         DBcontroller db = new DBcontroller();
         Connection connectdb = db.connectDb();
 

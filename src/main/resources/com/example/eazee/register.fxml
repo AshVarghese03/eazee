@@ -60,22 +60,22 @@
                   <Font name="Times New Roman" size="19.0" />
                </font>
             </Text>
+            <TextField fx:id="name" layoutX="133.0" layoutY="59.0" />
+            <TextField fx:id="username" layoutX="133.0" layoutY="100.0" />
+            <PasswordField fx:id="password" layoutX="133.0" layoutY="137.0" />
+            <PasswordField fx:id="re_enter" layoutX="133.0" layoutY="174.0" />
+            <TextField fx:id="email" layoutX="133.0" layoutY="215.0" />
             <Button fx:id="SubmitButton" layoutX="83.0" layoutY="251.0" mnemonicParsing="false" onAction="#Register" prefHeight="27.0" prefWidth="149.0" styleClass="container2" stylesheets="@style.css" text="Register">
                <font>
                   <Font name="Arial Black" size="13.0" />
                </font>
             </Button>
-            <TextField fx:id="name" layoutX="133.0" layoutY="59.0" />
-            <TextField fx:id="username" layoutX="133.0" layoutY="100.0" />
-            <TextField fx:id="email" layoutX="133.0" layoutY="215.0" />
-            <PasswordField fx:id="password" layoutX="133.0" layoutY="137.0" />
-            <PasswordField fx:id="re_enter" layoutX="133.0" layoutY="174.0" />
+            <Button layoutX="126.0" layoutY="287.0" mnemonicParsing="false" onAction="#SwitchToLogin" opacity="0.0" prefHeight="28.0" prefWidth="114.0" />
             <Label fx:id="registrationHelp" alignment="CENTER" layoutX="7.0" layoutY="41.0" prefHeight="18.0" prefWidth="302.0" textAlignment="JUSTIFY" textFill="#f20000">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button layoutX="126.0" layoutY="287.0" mnemonicParsing="false" onAction="#SwitchToLogin" opacity="0.0" prefHeight="28.0" prefWidth="114.0" />
             <Text layoutX="25.0" layoutY="305.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Alreaady a user? Click here to login" wrappingWidth="215.9830722808838">
                <font>
                   <Font name="Times New Roman Bold Italic" size="14.0" />

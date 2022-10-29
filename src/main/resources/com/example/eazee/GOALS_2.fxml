@@ -21,16 +21,7 @@
             <Font name="Times New Roman" size="19.0" />
          </font>
       </Button>
-      <Button layoutX="23.0" layoutY="214.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="246.0" styleClass="container2" stylesheets="@style.css" text="ADD GOALS">
-         <font>
-            <Font name="Arial Black" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="23.0" layoutY="328.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="246.0" styleClass="container2" stylesheets="@style.css" text="VIEW GOALS">
-         <font>
-            <Font name="Arial Black" size="12.0" />
-         </font></Button>
-      <Pane layoutX="348.0" layoutY="151.0" prefHeight="323.0" prefWidth="381.0" styleClass="container2" stylesheets="@style.css">
+      <Pane layoutX="74.0" layoutY="90.0" prefHeight="461.0" prefWidth="656.0" styleClass="container2" stylesheets="@style.css">
          <children>
             <Label layoutX="14.0" layoutY="78.0" prefHeight="33.0" prefWidth="128.0" text="GOAL NAME">
                <font>
@@ -47,10 +38,11 @@
                   <Font name="Arial Black" size="16.0" />
                </font>
             </Label>
-            <TextField fx:id="GoalName" layoutX="173.0" layoutY="82.0" prefHeight="25.0" prefWidth="179.0" />
-            <TextField fx:id="GoalAmount" layoutX="173.0" layoutY="149.0" prefHeight="25.0" prefWidth="179.0" />
-            <ComboBox fx:id="GoalDuration" layoutX="173.0" layoutY="226.0" prefHeight="25.0" prefWidth="179.0" />
-            <Button fx:id="SaveButton" layoutX="145.0" layoutY="278.0" mnemonicParsing="false" onAction="#AddGoal" prefHeight="25.0" prefWidth="79.0" text="Add" />
+            <TextField fx:id="GoalName" layoutX="173.0" layoutY="82.0" prefHeight="25.0" prefWidth="389.0" />
+            <TextField fx:id="GoalAmount" layoutX="173.0" layoutY="149.0" prefHeight="25.0" prefWidth="389.0" />
+            <ComboBox fx:id="GoalDuration" layoutX="173.0" layoutY="226.0" prefHeight="25.0" prefWidth="389.0" />
+            <Button fx:id="SaveButton" layoutX="213.0" layoutY="300.0" mnemonicParsing="false" onAction="#AddGoal" prefHeight="33.0" prefWidth="105.0" text="Add Goal" />
+            <Button layoutX="413.0" layoutY="300.0" mnemonicParsing="false" onAction="#ViewGoal" prefHeight="33.0" prefWidth="105.0" text="View Goal" />
          </children>
       </Pane>
       <Label fx:id="informationBanner" layoutX="393.0" layoutY="84.0" prefHeight="18.0" prefWidth="309.0" />

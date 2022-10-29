@@ -20,6 +20,8 @@ import java.util.ResourceBundle;
 
 public class DBcontroller {
 
+    UserInformation uinfo = UserInformation.getInstance();
+
     class BudgetStruct{
         String budgetAmt;
         String balanceAmt;
@@ -29,7 +31,7 @@ public class DBcontroller {
     @FXML
     public void initialize() {
 
-        UserInformation uinfo = UserInformation.getInstance();
+
         UserName.setText(uinfo.getUserName());
 
         BudgetStruct budgetStruct = getBudgetDetails();
@@ -67,7 +69,8 @@ public class DBcontroller {
             return databaseLink;
         }
     public BudgetStruct getBudgetDetails(){
-            String Sql ="SELECT * FROM budget WHERE b_id=1";
+
+            String Sql ="SELECT * FROM budget WHERE username='"+uinfo.getUserID()+"'";
             DBcontroller db = new DBcontroller();
             Connection connectdb = db.connectDb();
 

@@ -55,6 +55,9 @@ public class TransactionController implements Initializable {
         for (String category : categories) {
             listCategories.getItems().add(category);
         }
+
+
+
     }
 
 
@@ -124,8 +127,10 @@ public class TransactionController implements Initializable {
             String selectedAmount = Amount.getText();
             String selectedType = (String) TransType.getValue();
             String selectedCat = (String) listCategories.getValue();
-            String data_fields = "'"+selectedType+"' , '"+selectedCat+"', '"+selectedAmount+"'";
-            String Sql = "INSERT INTO transaction (t_type,t_category,t_amt) VALUES ("+data_fields+")";
+            UserInformation uinfo = UserInformation.getInstance();
+            String user_id = uinfo.getUserID();
+            String data_fields = "'"+selectedType+"' , '"+selectedCat+"', '"+selectedAmount+"','"+user_id+"'";
+            String Sql = "INSERT INTO transaction (t_type,t_category,t_amt,username) VALUES ("+data_fields+")";
             System.out.println(Sql);
 
             DBcontroller db = new DBcontroller();

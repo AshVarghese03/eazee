@@ -87,6 +87,13 @@ public class GoalController implements Initializable{
             ep.printStackTrace();
         }
     }
+    public void ViewGoal(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/com/example/eazee/GoalsView.fxml")); //pass scene name here
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     private String ValidateInputs() {
 
 
@@ -115,9 +122,11 @@ public class GoalController implements Initializable{
             String selectedAmount = (String) GoalAmount.getText();
             String selectedGoalName = (String) GoalName.getText();
             String selectedGoalDuration = (String) GoalDuration.getValue();
-            String data_fields = "'"+selectedGoalName+"' , "+selectedAmount+", '"+selectedGoalDuration+"'";
+            UserInformation uinfo = UserInformation.getInstance();
+            String user_id = uinfo.getUserID();
+            String data_fields = "'"+selectedGoalName+"' , "+selectedAmount+", '"+selectedGoalDuration+"','"+user_id+"'";
 
-            String Sql = "INSERT INTO goals (g_name,g_amount,g_period) VALUES ("+data_fields+")";
+            String Sql = "INSERT INTO goals (g_name,g_amount,g_period,username) VALUES ("+data_fields+")";
             System.out.println(Sql);
 
             DBcontroller db = new DBcontroller();
